@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Al-Qafila Design System
+ * Veterinary import company — Libya
+ * Palette: deep blues with white, soft fresh accents
+ * All colors MUST be HSL.
+ */
+
+@layer base {
+  :root {
+    --background: 210 40% 99%;
+    --foreground: 215 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 45% 12%;
+
+    /* Brand blues */
+    --primary: 211 78% 28%;          /* deep navy blue from logo */
+    --primary-foreground: 210 40% 99%;
+    --primary-glow: 207 85% 48%;     /* bright accent blue */
+    --primary-deep: 215 80% 18%;     /* near-black navy */
+
+    --secondary: 207 70% 94%;
+    --secondary-foreground: 211 78% 22%;
+
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 20% 42%;
+
+    --accent: 152 55% 45%;           /* fresh green accent */
+    --accent-foreground: 0 0% 100%;
+
+    --highlight: 45 95% 60%;         /* soft yellow highlight */
+    --highlight-foreground: 215 45% 12%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 90%;
+    --ring: 211 78% 28%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 80% 18%) 0%, hsl(211 78% 28%) 50%, hsl(207 85% 42%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(207 70% 97%) 0%, hsl(210 40% 99%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(207 85% 48%) 0%, hsl(152 55% 45%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 20px 50px -20px hsl(211 78% 28% / 0.25);
+    --shadow-card: 0 4px 20px -8px hsl(215 45% 12% / 0.08);
+    --shadow-glow: 0 0 60px hsl(207 85% 48% / 0.35);
+
+    /* Motion */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 50% 8%;
+    --foreground: 210 40% 98%;
+    --card: 215 45% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 45% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 207 85% 55%;
+    --primary-foreground: 215 50% 8%;
+    --primary-glow: 207 90% 65%;
+    --primary-deep: 215 80% 12%;
+    --secondary: 215 40% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 40% 16%;
+    --muted-foreground: 210 20% 70%;
+    --accent: 152 55% 50%;
+    --accent-foreground: 215 50% 8%;
+    --highlight: 45 95% 60%;
+    --highlight-foreground: 215 50% 8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 35% 20%;
+    --input: 215 35% 20%;
+    --ring: 207 85% 55%;
+  }
+
+  /* RTL / LTR direction support */
+  html[dir="rtl"] body {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  }
+  html[dir="ltr"] body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+
+  html[dir="ltr"] h1,
+  html[dir="ltr"] h2,
+  html[dir="ltr"] h3 {
+    font-family: 'Playfair Display', 'Inter', serif;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-soft { background: var(--gradient-soft); }
+  .bg-gradient-accent { background: var(--gradient-accent); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+
+  .text-balance { text-wrap: balance; }
+
+  /* Logical-property helpers for RTL/LTR symmetry */
+  .ms-auto { margin-inline-start: auto; }
+  .me-auto { margin-inline-end: auto; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.animate-float { animation: float 6s ease-in-out infinite; }
