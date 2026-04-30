@@ -34,7 +34,8 @@ const Footer = () => {
           </h4>
           <ul className="mt-4 space-y-2 text-primary-foreground/70 text-sm">
             <li>Tripoli, Libya</li>
-            <li>+218 ___ ___ ___</li>
+            <li>+218 91 210 6988</li>
+            <li>+218 91 355 7144</li>
             <li>info@al-qafila.ly</li>
           </ul>
         </div>
