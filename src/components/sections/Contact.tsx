@@ -37,7 +37,7 @@ const Contact = () => {
           <div className="lg:col-span-2 space-y-4">
             {[
               { Icon: MapPin, label: t("contact.address"), value: "Tripoli, Libya" },
-              { Icon: Mail, label: t("contact.emailLabel"), value: "info@al-qafila.ly" },
+              { Icon: Mail, label: t("contact.emailLabel"), value: "alqafila62@gmail.com" },
             ].map(({ Icon, label, value }) => (
               <div
                 key={label}

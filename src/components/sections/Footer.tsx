@@ -36,7 +36,7 @@ const Footer = () => {
             <li>Tripoli, Libya</li>
             <li>+218 91 210 6988</li>
             <li>+218 91 355 7144</li>
-            <li>info@al-qafila.ly</li>
+            <li>alqafila62@gmail.com</li>
           </ul>
         </div>
       </div>
